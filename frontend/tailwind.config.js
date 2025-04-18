@@ -15,7 +15,9 @@ export default {
         bg:"#F9FAFB",
         blue:"#112564",
         h1:"#111827",
-        h2:"#6B7280"
+        blue_bg:"#F3F8FF",
+        h2:"#6B7280",
+        text:"#667085"
       }
     },
   },
