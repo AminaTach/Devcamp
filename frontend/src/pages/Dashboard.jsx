@@ -39,35 +39,35 @@ const Dashboard = () => {
             </div>
 
             <div className="flex flex-col md:flex-row justify-start gap-6">
-                <div className="grid grid-rows-3 gap-6 w-full md:w-1/3">
-                    <div className="bg-white p-6 flex flex-col rounded-lg shadow-md border border-gray-200">
+                <div className="grid grid-rows-3 gap-3 w-full md:w-1/3">
+                    <div className="bg-white p-2 flex flex-col rounded-lg shadow-md border border-gray-200">
                         <div className="flex items-center mb-4">
-                            <FavoriteChart className="text-[#DB4DFF] w-10 h-10 p-2 bg-[#ffb1f175] rounded-lg mr-4" />
-                            <h2 className="text-lg text-[#6B7280]">Total Predicted Sales This Week</h2>
+                            <FavoriteChart className="text-[#DB4DFF] w-10 p-1 h-10  bg-[#ffb1f175] rounded-lg mr-4" />
+                            <h2 className="text-md text-text">Total Predicted Sales This Week</h2>
                         </div>
-                        <p className="text-4xl font-bold text-gray-700">250 units</p>
+                        <p className="text-2xl font-bold text-blue ml-8">250 units</p>
                     </div>
 
-                    <div className="bg-white p-6 flex flex-col rounded-lg shadow-md border border-gray-200">
+                    <div className="bg-white p-2 flex flex-col rounded-lg shadow-md border border-gray-200">
                         <div className="flex items-center mb-4">
-                            <FaBoxOpen className="text-orange-500 w-10 h-10 p-2 bg-orange-100 rounded-lg mr-4" />
-                            <h2 className="text-lg text-[#6B7280]">Out-of-Stock Rate</h2>
+                            <FaBoxOpen className="text-orange-500 w-10 p-1 h-10  bg-orange-100 rounded-lg mr-4" />
+                            <h2 className="text-md text-text">Out-of-Stock Rate</h2>
                         </div>
-                        <p className="text-4xl font-bold text-gray-700">10% SKU-level</p>
+                        <p className="text-2xl font-bold text-blue ml-8">10% SKU-level</p>
                     </div>
 
-                    <div className="bg-white p-6 flex flex-col rounded-lg shadow-md border border-gray-200">
+                    <div className="bg-white p-2 flex flex-col rounded-lg shadow-md border border-gray-200">
                         <div className="flex items-center mb-4">
-                            <ChartCircle className="text-[#2563EB] w-10 h-10 p-2 bg-[#EDF2FF] rounded-lg mr-4" />
-                            <h2 className="text-lg text-[#6B7280]">AI ForeCast Accuracy (%)</h2>
+                            <ChartCircle className="text-[#2563EB] w-10 p-1 h-10  bg-[#EDF2FF] rounded-lg mr-4" />
+                            <h2 className="text-md text-text ">AI ForeCast Accuracy (%)</h2>
                         </div>
-                        <p className="text-4xl font-bold text-gray-700">80%</p>
+                        <p className="text-2xl font-bold text-blue ml-8">80%</p>
                     </div>
                 </div>
 
-                <div className="w-full md:w-2/3 mt-6 md:mt-0 bg-white p-6 rounded-lg shadow-md border border-gray-200">
-                    <h2 className="text-xl font-bold mb-4 text-gray-800">Top Product Trend: Forecast vs Reality (Weekly Comparison)</h2>
-                    <ResponsiveContainer width="100%" height={350}>
+                <div className="w-full md:w-2/3 mt-6 md:mt-0 bg-white p-4 rounded-lg shadow-md border border-gray-200">
+                    <h2 className="text-xl font-bold mb-2 text-gray-800">Top Product Trend: Forecast vs Reality (Weekly Comparison)</h2>
+                    <ResponsiveContainer width="100%" height={270}>
                         <AreaChart data={data} margin={{ top: 20, right: 30, left: 0, bottom: 0 }}>
                             <CartesianGrid strokeDasharray="3 3" />
                             <XAxis dataKey="name" />
@@ -85,7 +85,7 @@ const Dashboard = () => {
                 <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200">
                     <div className="flex justify-between items-center mb-4">
                         <div className="flex items-center">
-                            <Folder2 className="text-orange-500 w-10 h-10 p-2 bg-orange-100 rounded-lg mr-4" />
+                            <Folder2 className="text-orange-500 w-10 p-1 h-10  bg-orange-100 rounded-lg mr-4" />
                             <h2 className="text-xl font-bold text-gray-800">5 Products In High Demand this Week</h2>
                         </div>
                         <a href="#" className="text-purple-500 hover:underline">View Full Report</a>
