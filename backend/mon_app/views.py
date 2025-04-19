@@ -320,3 +320,38 @@ def predictions_par_produit_et_date(request, id_produit, debut_week):
     predictions = Prediction.objects.filter(id_produit_id=id_produit, debut_week=debut_week).values()
     return JsonResponse(list(predictions), safe=False)
 
+import joblib
+import numpy as np
+import os
+from django.http import JsonResponse
+from rest_framework.decorators import api_view
+
+
+
+
+chemin_modele = 'C:/Users/hp/OneDrive/Bureau/DevCamp/backend/mon_app/modeles/sale_predict.pkl'
+
+# Chargez le modèle
+model = joblib.load(chemin_modele)
+
+
+@api_view(["POST"])
+def prediction_view(request):
+    try:
+        csv_file = request.FILES["csv_file"]
+
+        # Lire le fichier CSV
+        df = pd.read_csv(csv_file)
+
+        # (optionnel) Supprimer la colonne target si elle existe
+        if "label" in df.columns:
+            df = df.drop("label", axis=1)
+
+        # Faire les prédictions
+        predictions = model.predict(df)
+
+        # Retourner les résultats
+        return JsonResponse({"predictions": predictions.tolist()})
+    
+    except Exception as e:
+        return JsonResponse({"error": str(e)}, status=400)
