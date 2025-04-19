@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from 'react-router-dom';
-import { Category, FolderOpen, Box, HomeTrendUp, Setting } from "iconsax-reactjs";
+import { Category, FolderOpen, Box, HomeTrendUp, Setting, Bag2 } from "iconsax-reactjs";
 
 import logo from '../assets/logo.svg'
 import logo2 from '../assets/logo2.svg'
@@ -23,6 +23,8 @@ const Sidebar = () => {
             setActiveMenuItem('forecasts');
         } else if (path === '/settings') {
             setActiveMenuItem('settings');
+        }else if (path === '/packs') {
+            setActiveMenuItem('packs');
         } else {
             setActiveMenuItem('dashboard');
         }
@@ -46,6 +48,9 @@ const Sidebar = () => {
                 break;
             case 'forecasts':
                 navigate('/forecasts');
+                break;
+            case 'packs':
+                navigate('/packs');
                 break;
             case 'settings':
                 navigate('/settings');
@@ -84,7 +89,7 @@ const Sidebar = () => {
                         </span>
                     </li>
                     <li
-                        className={`menu-item flex items-center p-3 gap-3 hover:z-10 cursor-pointer rounded-2xl  ${isCollapsed ? 'w-10 m-3 h-10 p-2 rounded-full' : 'p-3 rounded-2xl'}  ${activeMenuItem === 'products' ? 'bg-blue' : ''}`}
+                        className={`menu-item flex items-center p-3 gap-3 hover:z-10 cursor-pointer rounded-2xl  ${isCollapsed ? 'w-11 m-3 h-11 p-2 rounded-full' : 'p-3 rounded-2xl'}  ${activeMenuItem === 'products' ? 'bg-blue' : ''}`}
                         onClick={() => handleMenuItemClick('products')}
                     >
                         <FolderOpen
@@ -95,7 +100,7 @@ const Sidebar = () => {
                         </span>
                     </li>
                     <li
-                        className={`menu-item flex items-center gap-3 p-3 hover:z-10 cursor-pointer rounded-2xl  ${isCollapsed ? 'w-10 m-3 h-10 p-2 rounded-full' : 'p-3 rounded-2xl'} ${activeMenuItem === 'inventory' ? 'bg-blue' : ''}`}
+                        className={`menu-item flex items-center gap-3 p-3 hover:z-10 cursor-pointer rounded-2xl  ${isCollapsed ? 'w-11 m-3 h-11 p-2 rounded-full' : 'p-3 rounded-2xl'} ${activeMenuItem === 'inventory' ? 'bg-blue' : ''}`}
                         onClick={() => handleMenuItemClick('inventory')}
                     >
                         <Box
@@ -107,7 +112,7 @@ const Sidebar = () => {
                         </span>
                     </li>
                     <li
-                        className={`menu-item flex items-center p-3 gap-3 hover:z-10 cursor-pointer rounded-2xl    ${isCollapsed ? 'w-10 m-3 h-10 p-2 rounded-full' : 'p-3 rounded-2xl'} ${activeMenuItem === 'forecasts' ? 'bg-blue' : ''}`}
+                        className={`menu-item flex items-center p-3 gap-3 hover:z-10 cursor-pointer rounded-2xl    ${isCollapsed ? 'w-11 m-3 h-11 p-2 rounded-full' : 'p-3 rounded-2xl'} ${activeMenuItem === 'forecasts' ? 'bg-blue' : ''}`}
                         onClick={() => handleMenuItemClick('forecasts')}
                     >
                         <HomeTrendUp
@@ -119,7 +124,20 @@ const Sidebar = () => {
                         </span>
                     </li>
                     <li
-                        className={`menu-item flex items-center p-3  ${isCollapsed ? 'w-10 m-3 h-10 p-2 rounded-full' : 'p-3 rounded-2xl'}  gap-3 hover:z-10 cursor-pointer rounded-2xl ${activeMenuItem === 'settings' ? 'bg-blue' : ''}`}
+                        className={`menu-item flex items-center p-3 gap-3 hover:z-10 cursor-pointer rounded-2xl    ${isCollapsed ? 'w-11 m-3 h-11 p-2 rounded-full' : 'p-3 rounded-2xl'} ${activeMenuItem === 'packs' ? 'bg-blue' : ''}`}
+                        onClick={() => handleMenuItemClick('packs')}
+                    >
+                        <Bag2
+                            size="24"
+                            className={` ${activeMenuItem === 'packs' ? 'text-white  ' : 'text-text_side'}`}
+                        />
+                        <span className={`menu-text ${isCollapsed ? "hidden" : ""} ${activeMenuItem === 'packs' ? 'text-white' : ''}`}>
+                            Packs
+                        </span>
+                    </li>
+                    <span className="block w-full h-px bg-slate-200 mt-4"></span>
+                    <li
+                        className={`menu-item flex items-center p-3 mt-2  ${isCollapsed ? 'w-11 m-3 h-11 p-2 rounded-full' : 'p-3 rounded-2xl'}  gap-3 hover:z-10 cursor-pointer rounded-2xl ${activeMenuItem === 'settings' ? 'bg-blue' : ''}`}
                         onClick={() => handleMenuItemClick('settings')}
                     >
                         <Setting

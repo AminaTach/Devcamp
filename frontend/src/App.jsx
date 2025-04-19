@@ -4,6 +4,8 @@ import Sidebar from './components/Sidebar';
 import InventoryTable from './pages/InventoryTable';
 import ProductsTable from './pages/ProductTable';
 import Dashboard from './pages/Dashboard';
+import Packs from './pages/Pack'
+import Plans from './pages/Plans'
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
             <Route path="/inventory" element={<InventoryTable />} />
             <Route path="/products" element={<ProductsTable />} />
             <Route path="/" element={<Dashboard/>} />
+            <Route path="/packs" element={<Packs/>} />
+            <Route path="/plans" element={<Plans/>}/>
 
           </Routes>
         </div>
