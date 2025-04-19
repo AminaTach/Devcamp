@@ -37,5 +37,11 @@ urlpatterns = [
     
     path('api/predictions_par_produit/<int:id_produit>/', views.predictions_par_produit, name='predictions_par_produit'),
     path('api/predictions_par_produit_et_date/<int:id_produit>/<str:debut_week>/', views.predictions_par_produit_et_date, name='predictions_par_produit_et_date'),
+
+    path('api/verifier_notifications/', views.verifier_notifications, name='verifier_notifications'),
+
+    path('api/importer_produits_csv/', views.importer_produits_csv, name='importer_produits_csv'),
+    
+    path('api/predict/', views.prediction_view, name='predict'),
 ]
 
